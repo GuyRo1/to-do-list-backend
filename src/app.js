@@ -14,8 +14,8 @@ app.use(cors({
   "optionsSuccessStatus": 204
 }))
 app.use(express.json())
-app.use('/', (req, res) => { res.send('ok') })
 app.use('/to-do', toDoRouter)
+app.use('/', (req, res) => { res.send('ok') })
 
 module.exports = app
 
