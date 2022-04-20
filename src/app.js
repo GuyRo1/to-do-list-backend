@@ -6,10 +6,13 @@ require('./db/mongoose')
 
 const app = express()
 
-// app.use(cors({
-//     origin:'http//localhost:3000'
-// }))
-app.use(cors())
+
+app.use(cors({
+    "origin": "*",
+    "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
+    "preflightContinue": false,
+    "optionsSuccessStatus": 204
+  }))
 app.use(express.json())
 app.use('/to-do', toDoRouter)
 
